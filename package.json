@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/purescript-node-contrib/purescript-eventsource#readme",
   "dependencies": {
-    "eventsource": "^1.0.7"
+    "eventsource": "^1.0.7",
+    "ssestream": "^1.1.0"
   }
 }

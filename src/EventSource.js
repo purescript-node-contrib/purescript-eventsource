@@ -1,5 +1,7 @@
 "use strict"; 
 
+const EventSource = require('eventsource')
+
 exports._createEventSource = url => options => () => {
   options.https = { rejectUnauthorized:  options.httpsRejectUnauthorized }
   delete options.httpsRejectUnauthorized
@@ -26,7 +28,7 @@ exports._onOpen = evs => cb => () => {
 }
 
 exports._onMessage = evs => cb => () => {
-  evs.onmessage = cb 
+  evs.onmessage = (e) => cb(e)()
 }
 
 exports._onError = evs => closeError => evsError => cb => () => {

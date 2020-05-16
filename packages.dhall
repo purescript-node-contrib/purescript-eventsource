@@ -135,6 +135,18 @@ let additions =
     , version =
         "master"
     }
+  , sse-stream =
+    { dependencies =
+      [ "http-types"
+      , "node-http"
+      , "node-streams"
+      , "spec"
+      ]
+    , repo =
+        "https://github.com/purescript-node-contrib/purescript-sse-stream.git"
+    , version =
+        "master"
+    }
   }
   
 in  upstream // overrides // additions
