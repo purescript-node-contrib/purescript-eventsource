@@ -12,11 +12,11 @@ exports._readyState = evs => () => {
   evs.readyState 
 }
 exports._addEventListener = evs => e => cb => () => {
-  evs.addEventListener(e, cb)
+  evs.addEventListener(e, msgevt => cb(msgevt)())
 }
 
 exports._removeEventListener = evs => e => cb => () => {
-  evs.removeEventListener(e, cb)
+  evs.removeEventListener(e, () => cb())
 }
 
 exports.close = evs => () => {
